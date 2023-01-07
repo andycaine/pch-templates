@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load image_extras %}
+{% load seo %}
+{% block subtitle %}Late Deals on Holiday Cottages in Pembrokeshire{% endblock %}
+
+{% block content %}
+
+{% if late_deals %}
+
+
+            <article>
+           		<header>
+               		<h1><a name="content"></a>Late Deals on Holiday Cottages in Pembrokeshire</h1>
+           	    </header>
+
+
+                <ul id="property-search-results">
+                    {% for result in late_deals %}
+                   	<li class="featured-side blue-theme property-summary">
+                       	<!-- -->
+                        <a href="{% property_seo_url result.property %}?length_of_stay={{result.nights}}&start_date={{result.start_date|date:"d+M+Y"}}" target="_self" title="{{result.property.name}}">
+                            <img src="{% smart_resized result.property.main_image.image.url 400 400 %}" class="responsive thumb-aside" alt="{{result.name}}">
+                            <ul class="cottage-points">
+                                <li>Sleeps {{result.property.max_occupants}}</li>
+                                <li>Bedrooms {{result.property.bedrooms}}</li>
+                                <li>{{result.property.location.name}}</li>
+                                <li>{{result.property.pets_allowed|yesno:"Pets allowed,No pets"}}</li>
+                            </ul>
+                            <p class="cottage-name-side">{{result.property.name}}, {{result.property.location.name}}</p>
+                            <p class="small-note">{{result.nights}} Nights - {{result.start_date|date:"d M Y"}} was <span class="discounted">&pound;{{result.original_price}}</span></p>
+                            <span class="button-side">Book for <span class="discount">&pound;{{result.price}}</span></span>
+
+                        </a>
+                        <!-- -->
+                        </li>
+                        {% endfor %}
+                </ul>
+           	  </article>
+
+
+{% else %}
+<p>There are no late deals available at the moment.</p>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% load image_extras %}
+{% load seo %}
+
+{% block content %}
+            <article>
+           		<header>
+               		<h1><a name="content"></a>Holiday Cottages in Pembrokeshire West Wales</h1>
+           	    </header>
+
+
+                <ul id="property-search-results">
+                    {% for result in properties %}
+                   	<li class="featured-side blue-theme">
+                       	<!-- -->
+                        <a href="{% property_seo_url result %}" target="_self" title="{{result.name}}, {{result.location.name}}">
+                            <img src="{% smart_resized result.main_image.image.url 400 400 %}" class="responsive thumb-aside" alt="{{result.main_image.alt}}">
+                            <ul class="cottage-points">
+                                <li>Sleeps {{result.max_occupants}}</li>
+                                <li>Bedrooms {{result.bedrooms}}</li>
+                                <li>{{result.location.name}}</li>
+                                <li>{{result.pets_allowed|yesno:"Pets allowed,No pets"}}</li>
+                            </ul>
+                            <p class="cottage-name-side">{{result.name}}, {{result.location.name}}</p>
+                            {% if result.cheapest_price %}
+                            <p class="small-note">Prices from &pound;{{result.cheapest_price}}</p>
+                            {% else %}
+                            <p class="small-note">Please call us for the latest prices</p>
+                            {% endif %}
+                            <span class="button-side">See Inside &raquo;</span>
+                        </a>
+                        <!-- -->
+                        </li>
+                        {% endfor %}
+                </ul>
+           	  </article>
+
+              {% endblock %}
+

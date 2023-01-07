@@ -1,0 +1,101 @@
+<!doctype html>
+{% load static %}
+<html class="no-js" lang="en">
+<head>
+    {% include "analytics.html" %}
+    {% include "fbpixel.html" %}    
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+ 	<title>Cottage Owners - Puffin Cottage Holidays</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" href="{% static "images/apple-touch-icon.png" %}">
+  <link rel="stylesheet" href="{% static "css/normalize.css" %}">
+  <link rel="stylesheet" href="{% static "css/main.css" %}">
+  <script defer async src="{% static "js/vendor/modernizr-2.8.3.min.js" %}"></script>
+</head>
+<body>
+<!--[if lt IE 8]>
+	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+	<div id="wrapper">
+    	<header class="masthead">
+        	<div class="head-tel"><a href="tel:01834810234" title="Call 01834 810234">01834 810234</a></div>
+        	<nav class="nav" role="navigation">
+            	<ul class="nav-list">
+                	<li><a href="/" target="_self" title="Home">Home</a></li>
+                    <li><a href="/cottages/" target="_self" title="Cottages">Cottages</a></li>
+                    <li><a href="/about-us/" target="_self" title="About Us">About us</a></li>
+                    <li><a href="/contact-us/" target="_self" title="Contact">Contact</a></li>
+                    <li><a href="/property-owners/" target="_self" title="Cottage Owners Info">Owners Info</a></li>
+                </ul>
+            </nav>
+            <script type="text/javascript" src="{% static "js/mobile-nav.js" %}"></script>
+        </header>
+        <!--Container-->
+        <div id="container">
+            <div class="banner-container">
+                <div class="logo">
+                    <a href="/" target="_self" title="Puffin Cottages Home">
+                        <img src="{% static "images/gfx/puffin-cottages-logo-350.png" %}" alt="Puffin Cottage Holidays logo">
+                    </a>
+                </div>
+                <div class="banner-tel"><a href="tel:01834810234" title="Call 01834 810234">Call us 01834 810234</a></div>
+                <img src="{% static "images/banners/banner-1440-350-saundersfoot-aerial.jpg" %}" class="responsive banner">
+       	    </div>
+        	<main role="main">
+            <!--Main Content Area-->
+            <article>
+           		<header>
+               		<h1>Cottage Owners Information</h1>
+           	    </header>
+				{% if submitted %}
+				<div class="info">
+				  <img src="/static/images/tick.jpg" alt="tick" />
+				  <p>
+				    Thank you for your enquiry.  We will be in touch shortly.
+				  </p>
+				</div>
+				{% endif %}
+
+               	<p>Having maximised both our peak season and out of season holiday bookings for our current self catering holiday properties, we are looking for more apartments, cottages and other holiday accommodation to join us. If you have accommodation in Pembrokeshire that you are thinking of holiday letting please contact us to find out what we can offer you and to receive our Owner’s Information Pack.</p>
+               	<p>We want to make holiday letting as stress-free as possible but we also want to ensure that you can be as hands on as you want to be. For this reason we offer a flexible service which allows you to choose how you would like to use us. It costs absolutely nothing to add your holiday property to our website; we only charge commission on the bookings we take.</p>
+           	 	 <p>Some of the features we can offer are:</p>
+               	<ul>
+               		<li>Extremely competitive commission fees.</li>
+               	  	<li>A website that includes a live, online booking system.</li>
+               	  	<li>A friendly, personal and professional service that is available out of hours, 365 days a year.</li>
+               	  	<li>No restrictions or charges on using your own holiday accommodation.</li>
+               	  	<li>A property management package that suits you.</li>
+               	  	<li>Free key collection and call-out service.</li>
+              </ul>
+				<p class="telephone">Call: <a href="tel:01834810234">01834 810234</a> / <a href="tel:07989553750">07989553750</a></p>
+                <form id="contact-form" method="post" action=".">
+                  {% csrf_token %}
+                   	<fieldset>
+                       	<legend>Owners Call Back</legend>
+                        <div>
+                           	<label for="name">Your Name*</label>
+       						<input id="name" name="name" type="text" placeholder="Your name" required aria-required="true" tabindex="1">
+                        </div>
+                        <div>
+                            <label for="phone">Telephone*</label>
+                            <input id="phone" name="phone" type="tel" placeholder="01234 567890" required aria-required="true" tabindex="2">
+                        </div>
+                    </fieldset>
+                    <input name="submit" id="submit" type="submit" value="Send Message" tabindex="5">
+                </form>
+                <p class="small-note">Learn how we handle your information in our <a href="" target="_self" title="Privacy Policy">Privacy Policy</a>. Some fields * are required.</p>
+           	  </article>
+            </main>
+            <!--End Main Content Area-->
+            <!--Aside Content Area-->
+			{% include "aside.html" %}
+            <!--End Aside Content Area-->
+        </div>
+        <!--End Container -->
+		{% include "footer.html" %}
+    </div>
+    <script defer async src="{% static "js/plugins.js" %}"></script>
+    <script defer async src="{% static "js/main.js" %}"></script>
+</body>
+</html>

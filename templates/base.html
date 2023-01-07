@@ -1,0 +1,115 @@
+<!doctype html>
+{% load static %}
+{% load forms %}
+<html class="no-js" lang="en">
+<head>
+  {% include "analytics.html" %}
+  {% include "fbpixel.html" %}
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+ 	<title>{% block subtitle %}Self catering holiday cottages in Pembrokeshire{% endblock %} - Puffin Cottage Holidays</title>
+
+    <meta name="keywords" content="puffin, cottage, holidays, pembrokeshire, self, catering, self-catering, accommodation, saundersfoot, wales{% block additional_meta_keywords %}{% endblock %}" />
+    <meta name="description" content="{% block meta_description %}Handpicked self-catering holiday cottages in Pembrokeshire - the perfect place to find your perfect Pembrokeshire holiday.{% endblock %}" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="{% static "images/apple-touch-icon.png" %}">
+    <link rel="stylesheet" href="{% static "css/normalize.css" %}">
+    <link rel="stylesheet" href="{% static "css/main.css" %}">
+    <script defer async src="{% static "js/vendor/modernizr-2.8.3.min.js" %}"></script>
+    <script src="{% static "js/vendor/jquery-3.6.0.min.js" %}"></script>
+    <link href="{% static "css/responsiveslides.css" %}" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="{% static "js/responsiveslides.min.js" %}"></script>
+    <script defer async type="text/javascript" src="{% static "js/rslides-settings.js" %}"></script>
+
+  {% block scripttags %}{% endblock %}
+
+
+</head>
+<body>
+<!--[if lt IE 8]>
+	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+	<div id="wrapper">
+    	<header class="masthead">
+        	<div class="head-tel"><a href="tel:01834810234" title="Call 01834 810234">01834 810234</a></div>
+        	<nav class="nav" role="navigation">
+            	<ul class="nav-list">
+                	<li><a href="/" target="_self" title="Home">Home</a></li>
+                    <li><a href="/cottages/" target="_self" title="Cottages">Cottages</a></li>
+                    <li><a href="/about-us/" target="_self" title="About Us">About us</a></li>
+                    <li><a href="/contact-us/" target="_self" title="Contact">Contact</a></li>
+                    <li><a href="/property-owners/" target="_self" title="Cottage Owners Info">Owners Info</a></li>
+                </ul>
+            </nav>
+            <script type="text/javascript" src="{% static "js/mobile-nav.js" %}"></script>
+        </header>
+        <!--Container-->
+        <div id="container">
+            <div class="banner-container">
+                <div class="logo">
+                    <a href="/" target="_self" title="Puffin Cottage Holidays Home">
+                        <img src="{% static "images/gfx/puffin-cottages-logo-350.png" %}" alt="Puffin Cottage Holidays logo">
+                    </a>
+                </div>
+                <div class="banner-tel"><a href="tel:01834810234" title="Call 01834 810234">Call us 01834 810234</a></div>
+               <ul class="rslides" id="slider1"><!--Index Banner 1440px x 700px-->
+       	<li>
+        <img src="{% static "images/banners/banner-1440-700-barafundle-beach.jpg" %}" alt="The beach at Barafundle Bay, Pembrokeshire"  class="responsive banner">
+              <div class="overlay-block-main">
+                  <span class="overlay-title white">Your Perfect Pembrokeshire Break Starts Here</span>
+              </div>
+          </li>
+          <li>
+          <img src="{% static "images/banners/banner-1440-700-tenby-boats.jpg" %}" alt="Tenby harbour at low tide" class="responsive banner">
+              <div class="overlay-block-main">
+               	<span class="overlay-title white">Your Perfect Pembrokeshire Break Starts Here</span>
+              </div>
+          </li>
+          <li>
+          <img src="{% static "images/banners/banner-1440-700-watching-sunset.jpg" %}" alt="Woman and dog watching a sunset at a Pembrokeshire beach" class="responsive banner">
+              <div class="overlay-block-main">
+               	<span class="overlay-title white">Your Perfect Pembrokeshire Break Starts Here</span>
+              </div>
+          </li>
+          <li>
+          <img src="{% static "images/banners/banner-1440-700-tenby-castle-beach.jpg" %}" alt="St Catherine's rock and Castle Beach, Tenby" class="responsive banner">
+              <div class="overlay-block-main">
+               	<span class="overlay-title white">Your Perfect Pembrokeshire Break Starts Here</span>
+              </div>
+          </li>
+          <li>
+          <img src="{% static "images/banners/banner-1440-700-bucket-spade-beach.jpg" %}" alt="A bucket and spade at the beach" class="responsive banner">
+              <div class="overlay-block-main">
+               	<span class="overlay-title white">Your Perfect Pembrokeshire Break Starts Here</span>
+              </div>
+          </li>
+        </ul>
+              <div>
+                  <span class="button"><a href="#here">Search</a></span>
+              </div>
+                <form id="search" method="get" action="/cottages/search/"><a name="here"></a>
+                	<legend>Find A Cottage</legend>
+                    {% property_search_form property_search_form %}
+                    <input name="search" type="submit" value="Find Cottages">
+                </form>
+              <script nonce="{{request.csp_nonce}}">
+				$( ".button" ).on("click", function() {
+				  $( "#search" ).toggle( "slow" );
+				});
+				</script>
+            </div>
+        	<main role="main">
+            <!--Main Content Area-->
+            <!-- Left -->
+            {% block content %}{% endblock %}
+
+            </main>
+            <!--End Main Content Area-->
+			{% include "aside.html" %}
+        </div>
+        <!--End Container -->
+		{% include "footer.html" %}
+    </div>
+    <script defer async src="{% static "js/plugins.js" %}"></script>
+</body>
+</html>

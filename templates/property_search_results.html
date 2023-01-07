@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% load image_extras %}
+{% load seo %}
+
+{% block subtitle %}Search For Self Catering Holiday Cottages in Pembrokeshire{% endblock %}
+{% block meta_description %}Search for self catering holiday cottages in Pembrokeshire. Search by start date, length of holiday and party size.{% endblock %}
+
+{% block content %}
+
+
+            <article>
+           		<header>
+               		<h1><a name="content"></a>Holiday Cottages in Pembrokeshire West Wales</h1>
+           	    </header>
+
+{% if not search_results %}
+<p>
+We couldn't find any cottages that matched your preferences.  You can find all of our <a href="/cottages/">holiday cottages here</a>, or call us on 01834 810234 for more help.
+</p>
+{% endif %}
+
+                <ul id="property-search-results">
+                    {% for result in search_results %}
+                   	<li class="featured-side blue-theme">
+                       	<!-- -->
+                        {% if result.start_date %}
+                        <a href="{% property_seo_url result.property %}?length_of_stay={{result.nights}}&start_date={{result.start_date|date:"d+M+Y"}}"  target="_self" title="{{result.property.name}}, {{result.property.location.name}}">
+                        {% else %}
+                            <a href="{% property_seo_url result.property %}" target="_self" title="{{result.property.name}}">
+                        {% endif %}
+                            <img src="{% smart_resized result.property.main_image.image.url 400 400 %}" class="responsive thumb-aside" alt="{{result.property.main_image.alt}}">
+                            <ul class="cottage-points">
+                                <li>Sleeps {{result.property.max_occupants}}</li>
+                                <li>Bedrooms {{result.property.bedrooms}}</li>
+                                <li>{{result.property.location.name}}</li>
+                                <li>{{result.property.pets_allowed|yesno:"Pets allowed,No pets"}}</li>
+                            </ul>
+                            <p class="cottage-name-side">{{result.property.name}}, {{result.property.location.name}}</p>
+                            {% if result.discount_price  %}
+                                <p class="small-note">{{result.nights}} Nights - {{result.start_date|date:"d M Y"}} was &pound;{{result.price}}</p>
+                            {% elif result.start_date %}
+                                <p class="small-note">{{result.nights}} Nights - {{result.start_date|date:"d M Y"}}</p>
+                            {% endif %}
+                            {% if result.adjusted %}
+                                <p class="small-note adjusted">Adjusted to a {{result.adjusted_to}} arrival</p>
+                            {% endif %}
+                            {% if result.start_date %}
+                            <span class="button-side" name="view_property_{{result.property.id}}" >Book for &pound;{{result.price}}</span>
+                            {% else %}
+                            <span class="button-side" name="view_property_{{result.property.id}}" >See Inside &raquo;</span>
+                            {% endif %}
+                        </a>
+                        <!-- -->
+                        </li>
+                        {% endfor %}
+                </ul>
+           	  </article>
+
+              {% endblock %}

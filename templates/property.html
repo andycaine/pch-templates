@@ -1,0 +1,231 @@
+{% load static %}
+{% load cdn %}
+{% load image_extras %}
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    {% include "analytics.html" %}
+    {% include "fbpixel.html" %}
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block subtitle %}{{property.name}}{% endblock %} - Self-catering holiday cottage in {{property.location.name}}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="canonical" href="https://www.puffincottageholidays.co.uk/cottages/{{property.id}}/">
+	<link rel="apple-touch-icon" href="{% static "images/apple-touch-icon.png"%}">
+	<link rel="stylesheet" href="{% static "css/normalize.css"%}">
+  <link rel="stylesheet" href="{% static "css/main.css"%}">
+  <script src="{% static "js/vendor/jquery-3.6.0.min.js" %}"></script>
+  <script defer async src="{% static "js/vendor/modernizr-2.8.3.min.js" %}"></script>
+  <script type="text/javascript" src="{% static "js/lightbox.min.js" %}"></script>
+  <link href="{% static "css/responsiveslides.css"%}" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="{% static "js/responsiveslides.min.js" %}"></script>
+  <script defer async type="text/javascript" src="{% static "js/rslides-settings.js" %}"></script>
+  <link href="{% static "css/lightbox.css" %}" rel="stylesheet" type="text/css">
+
+
+
+<script nonce="{{request.csp_nonce}}" type="text/javascript" >
+//<![CDATA[
+
+  function ready(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
+      fn();
+    } else {
+      document.addEventListener('DOMContentLoaded', fn);
+    }
+  }
+
+  function load(url, target) {
+    var request = new XMLHttpRequest();
+    request.open('GET', url, true);
+
+    request.onload = function() {
+      if (request.status >= 200 && request.status < 400) {
+        // Success!
+        var resp = request.responseText;
+        document.getElementById(target).innerHTML = resp
+      }
+    };
+
+    request.send();
+
+  }
+
+var pch = {};
+pch.propertydetails = function() {
+
+    var pub = {};
+
+    pub.initMap = function(lat, lang, name) {
+        var latlng = new google.maps.LatLng(lat, lang);
+        var myOptions = {
+            zoom: 16,
+            center: latlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map"), myOptions);
+        var marker = new google.maps.Marker({position: latlng, title: name});
+        marker.setMap(map);
+    };
+
+    return pub;
+}();
+
+  function initMap() {
+      pch.propertydetails.initMap({{property.latitude}}, {{property.longitude}}, "{{property.name}}");
+  }
+
+  ready(function() {
+
+        var updateCalendar = function() {
+            var selectedMonth = document.getElementById('start-date').value;
+            var monthYear = selectedMonth.split('-');
+            var nights = document.getElementById('length-of-stay').value;
+            load('/cottages/{{property.id}}/availability_calendar/?year='+ monthYear[1] + '&month=' + monthYear[0] + '&nights=' + nights + '&length-of-stay=' + nights, "availability-wrapper");
+        };
+        document.getElementById('month-calendar-header').classList.add('hidden');
+        document.getElementById('calendar-update-btn').classList.add('hidden');
+        document.getElementById('start-date').classList.remove('hidden');
+
+	document.addEventListener('change', function(e) {
+	    if (e.target.id === 'start-date' || e.target.id === 'length-of-stay') {
+		updateCalendar();
+	    }
+	});
+
+	document.addEventListener('click', function(e) {
+
+	    if (e.target.id === 'next-month') {
+                var selectedMonth = document.getElementById('start-date').value;
+                var monthYear = selectedMonth.split('-');
+                var month = parseInt(monthYear[0]);
+                var year = parseInt(monthYear[1]);
+                if (month == 12) {
+                    month = 1;
+                    year++;
+                } else {
+                    month++;
+                }
+                var nights = document.getElementById('length-of-stay').value;
+                load('/cottages/{{property.id}}/availability_calendar/?year='+ year + '&month=' + month + '&nights=' + nights + '&length-of-stay=' + nights, "availability-wrapper");
+                e.preventDefault();
+		return;
+	    }
+
+	    if (e.target.id === 'prev-month') {
+                var selectedMonth = document.getElementById('start-date').value;
+                var monthYear = selectedMonth.split('-');
+                var month = parseInt(monthYear[0]);
+                var year = parseInt(monthYear[1]);
+                if (month == 1) {
+                    month = 12;
+                    year--;
+                } else {
+                    month--;
+                }
+                var nights = document.getElementById('length-of-stay').value;
+                load('/cottages/{{property.id}}/availability_calendar/?year='+ year + '&month=' + month + '&nights=' + nights + '&length-of-stay=' + nights, "availability-wrapper");
+                e.preventDefault();
+		return;
+	    }
+	});
+
+
+
+  });
+
+//]]>
+</script>
+  <style nonce="{{request.csp_nonce}}"></style>
+  <script async nonce="{{request.csp_nonce}}" type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-8Ed-QVrdn6EBqnZyReMAiz675veF7iY&callback=initMap"></script>
+</head>
+
+<!--[if lt IE 8]>
+	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+	<div id="wrapper">
+    	<header class="masthead">
+        	<div class="head-tel"><a href="tel:01834810234" title="Call 01834 810234">01834 810234</a></div>
+        	<nav class="nav" role="navigation">
+            	<ul class="nav-list">
+                	<li><a href="/" target="_self" title="Home">Home</a></li>
+                    <li><a href="/cottages/" target="_self" title="Cottages">Cottages</a></li>
+                    <li><a href="/about-us/" target="_self" title="About Us">About us</a></li>
+                    <li><a href="/contact-us/" target="_self" title="Contact">Contact</a></li>
+                    <li><a href="/property-owners/" target="_self" title="Cottage Owners Info">Owners Info</a></li>
+                </ul>
+            </nav>
+            <script type="text/javascript" src="{% static "js/mobile-nav.js" %}"></script>
+        </header>
+        <!--Container-->
+        <div id="container">
+            <div class="banner-container">
+                <div class="logo">
+                    <a href="/" target="_self" title="Puffin Cottage Holidays Home">
+                        <img src="{% static "images/gfx/puffin-cottages-logo-350.png" %}" alt="Puffin Cottage Holidays logo" >
+                    </a>
+                </div>
+                <div class="banner-tel"><a href="tel:01834810234" title="Call 01834 810234">Call us 01834 810234</a></div>
+<!--Responsive Banner-->
+              <ul class="rslides" id="slider1"><!--Cottage Banner 1440px x 500px-->
+                  {% for image in property.property_images|slice:":3" %}
+                  <li>
+                        <img src="{% smart_resized image.image.url 1440 500 %}" alt="{{ image.alt }}"  class="responsive cottage-banner">
+                  </li>
+                  {% endfor %}
+              </ul>
+            </div>
+        	<main role="main">
+            <!--Main Content Area-->
+            <h1 class="cottage-title">{{property.name}}</h1>
+                <!--Cottage Gallery / Single img wrapped in <a> link, followed by <a> links to additional enlarged img's-->
+                <div class="gallery-container">
+                  <a href="{% cdn property.main_image.image.url %}" target="_blank" data-lightbox="gallery">
+                        <img src="{% smart_resized property.main_image.image.url 400 400 %}" alt="{{ property.main_image.alt }}"  ><!--thumb 400 x 400px-->
+                    </a>
+                    {% for image in property.property_images|slice:"1:" %}
+                        <a href="{% cdn image.image.url %}" target="_blank" data-lightbox="gallery"></a>
+                    {% endfor %}
+                </div>
+                <!--Cottage Key Points-->
+                <ul class="cottage-points-page">
+                    <li>Sleeps {{property.max_occupants}}</li>
+                    <li>Bedrooms {{property.bedrooms}}</li>
+                    <li>{{property.location.name}}</li>
+                  <li>{{property.pets_allowed|yesno:"Pets Allowed,No Pets"}}</li>
+                </ul>
+                <!--Availability Column-->
+            	<div class="availability">
+                	<p class="title-side">Availability</p>
+						<div id="availability-wrapper">
+                            {% include "calendar.html" %}
+						</div>
+                </div>
+            <!--Description Content-->
+            <div class="desc">
+                <p class="title-side">Cottage Features</p>
+                <ul class="cottage-features">
+                    {% for facility in property.facilities.all %}
+                    <li>{{facility.name}}</li>
+                    {% endfor %}
+                </ul>
+
+      <p>
+        {{property.description|safe}}
+      </p>
+            </div>
+            <!--Google Map Container-->
+            <div id="map"></div>
+            </main>
+            <!--End Main Content Area-->
+            <!--Aside Content Area-->
+
+			{% include "aside.html" %}
+            <!--End Aside Content Area-->
+        </div>
+        <!--End Container -->
+		{% include "footer.html" %}
+    </div>
+<script src="{% static "js/plugins.js"%}"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load image_extras %}
+{% load seo %}
+
+
+{% block content %}
+                <div class="search-block blue-theme">
+                	<p class="title-side">Welcome</p>
+                    <p>Puffin Cottages of Pembrokeshire offer a range of quality cottages across the Pembrokeshire Coast. From contemporary apartments for two or large six bedroom houses for a family get together, Puffin Cottages has it covered.</p>
+                    <p>Please see our <a href="/covid19/">Covid-19 FAQs</a> if you have any questions about how any restrictions may affect your stay.</p>
+                </div>
+                <!-- Middle -->
+                {% if featured_property %}
+                <div class="featured-side blue-theme">
+                	<p class="title-side">Featured Cottage</p>
+                    <!-- removed this <a> block because we have 2 separate clickable elements inside  <a href="#" target="_self" title="Featured Cottage">-->
+                    	<img src="{% smart_resized featured_property.main_image.image.url 400 400 %}" class="responsive thumb-aside" alt="Featured Cottage">
+                        <ul class="cottage-points">
+                            <li>Sleeps {{featured_property.max_occupants}}</li>
+                            <li>{{featured_property.bedrooms}} Bedrooms</li>
+                            <li>{{featured_property.location.name}}</li>
+                            <li>{{featured_property.pets_allowed|yesno:"Pets allowed,No pets"}}</li>
+                        </ul>
+                        <p class="cottage-name-side">{{featured_property.name}}, {{featured_property.location.name}}</p>
+                        <p class="small-note">Highly Recommended</p>
+                        <a href="{% property_seo_url featured_property %}" class="button-side">See Inside &raquo;</a>
+                        <p><a href="/cottages/" class="small-note">View all Cottages here</a></p>
+						<!--</a> -->
+                </div>
+                {% endif %}
+                <!-- Right -->
+                {% if late_deal %}
+                <div class="late-deals blue-theme">
+                	<p class="title-side">Late Deals</p>
+                    <!-- removed this <a> block because we have 2 separate clickable elements inside  <a href="#" target="_self" title="Cottage Deals"> -->
+                    	<img src="{% smart_resized late_deal.property.main_image.image.url 400 400 %}" class="responsive thumb-aside" alt="Featured Cottage">
+                        <ul class="cottage-points">
+                            <li>Sleeps {{late_deal.property.max_occupants}}</li>
+                            <li>{{late_deal.property.bedrooms}} Bedrooms</li>
+                            <li>{{late_deal.property.location.name}}</li>
+                            <li>{{late_deal.property.pets_allowed|yesno:"Pets allowed,No pets"}}</li>
+                        </ul>
+                        <p class="cottage-name-side">{{late_deal.property.name}}, {{late_deal.property.location.name}}</p>
+                        <p class="small-note">{{late_deal.nights}} Nights - {{late_deal.start_date|date:"d M Y"}} - Was &pound;{{late_deal.original_price}}</p>
+                        <a href='{% property_seo_url late_deal.property %}?length_of_stay={{late_deal.nights}}&start_date={{late_deal.start_date|date:"d+M+Y"}}' class="button-side">Book for &pound;{{late_deal.price}}</a>
+                        <p><a href="/late-deals/" class="small-note">View all late deals here</a></p>
+						<!--</a> -->
+                </div>
+                {% endif %}
+
+            	<article>
+            		<header>
+                		<h1></h1>
+                	</header>
+                	<p></p>
+            	</article>
+{% endblock %}

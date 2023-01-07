@@ -1,0 +1,28 @@
+{% load static %}
+
+    <!--Aside Content Area-->
+        	<aside>
+            	<div class="newsletter">
+                	<p class="title-side">Get The Deals First!</p>
+                    <p>Recieve our late deals &amp; special offers before anyone else by email;</p>
+                    <form id="newsletter-form" method="post" action="/newsletter-signup/">
+                        {% csrf_token %}
+                    	<input type="email" name="email" tabindex="1" placeholder="Enter your email address">
+                        <input type="submit" name="sign-up" value="Sign Up" tabindex="2">
+                    </form>
+                    <p class="small-note">Fear not, we will not bombard you with emails or pass on your information!<br>
+					We generally send emails just once or twice a month with Late Deals, Special Offers, New Property Information and Events happening in Pembrokeshire that you may find of interest.<br>
+					(You can unsubscribe at any time via the link in any newsletter).<br>
+<a href="/privacy-policy/" target="_self" title="Newsletter privacy explained">Newsletter privacy explained</a></p>
+                </div>
+                <div class="social">
+                	<p class="title-side white">Follow Us!</p>
+                    <div class="block social-icons">
+                        <a href="https://www.facebook.com/PuffinCottageHolidays"><img src="{% static "images/social/fb.png" %}" width="40" height="40"></a>
+                        <a href="https://www.tiktok.com/@puffincottageholidays"><img src="{% static "images/social/tiktok.png" %}" width="40" height="40"></a>
+                        <a href="https://www.instagram.com/puffin_cottage_holidays/"><img src="{% static "images/social/insta.svg" %}" width="40" height="40"></a>
+                    </div>
+                  	<p class="white">We often run competitions, exclusive deals and those last minute availability bookings through our social media networks. Why not follow Puffin Cottages online at one of the above social networks and see what we're up to.</p>
+                </div>
+        	</aside>
+            <!--End Aside Content Area-->

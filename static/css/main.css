@@ -1,0 +1,1482 @@
+/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
+@import url(https://fonts.googleapis.com/css?family=Lato:400,400italic,700|Architects+Daughter|Dekko|Biryani:700,300);
+/*
+font-family: 'Lato', sans-serif; normal400 normal400italic bold700 = body nav
+font-family: 'Architects Daughter', cursive; normal400 = Script 2
+font-family: 'Biryani', sans-serif; light300 bold700 = heading title
+font-family: 'Dekko', cursive; normal400 Nav bar
+*/
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Styles - Mobile First Styles
+   ========================================================================== */
+html {
+}
+body {
+	font-family: 'Lato', sans-serif;
+	color:#2A2A2A;
+	background:#204883;
+}
+a {
+	text-decoration:none;
+	color:#ff8e27;
+}
+a:hover {
+	color:#204883;
+}
+p {
+}
+h1, h2, h3, h4, h5, h6 {
+	margin:0.4em 0;
+	font-family: 'Biryani', sans-serif;
+	font-weight:700;
+	color:#204883;
+}
+h1 {
+	font-size:2.0em;
+}
+h2 {
+	font-size:1.9em;
+}
+h3 {
+	font-size:1.8em;
+}
+h4 {
+	font-size:1.5em;
+}
+h5 {
+	font-size:1.5em;
+}
+h6 {
+	font-size:1.5em;
+}
+#wrapper {
+	width:100%;
+	max-width:1440px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:#FFFFFF;
+	background:rgba(255,255,255,1.0);
+}
+header {
+}
+.masthead {
+	background:#002851;
+}
+.logo {
+	position:absolute;
+	top:0;
+	display:block;
+	width:100%;
+	height:auto;
+	padding:1.0em 0;
+	background:rgba(255,255,255,0.6);
+	z-index:10;
+}
+.logo img {
+	max-width:250px;
+}
+.head-tel {
+	position:absolute;
+	top:10px;
+	left:4%;
+	display:block;
+	font-family: 'Biryani', sans-serif;
+	font-size:1.7em;
+}
+.head-tel a {
+	color:#FFFFFF;
+}
+.banner-tel {
+	position:absolute;
+	top:10px;
+	right:10%;
+	display:none;
+	width:40%;
+	font-family: 'Biryani', sans-serif;
+	font-size:1.4em;
+	text-align:center;
+	text-shadow: 0 0 4px #FFFFFF;
+	z-index:11;
+}
+.banner-tel a {
+	color:#002851;
+}
+nav {
+}
+.nav { /*Class*/
+	position:relative;
+}
+.nav ul {
+	list-style:outside;
+	list-style-type:none;
+	height:auto;
+	overflow:hidden;
+	padding:0;
+	margin:0;
+}
+.nav ul li {
+	display:block;
+	float:left;
+	width:100%;
+	-webkit-transition: background 500ms ease-in-out;
+	-moz-transition: background 500ms ease-in-out;
+	-ms-transition: background 500ms ease-in-out;
+	-o-transition: background 500ms ease-in-out;
+	transition: background 500ms ease-in-out;
+}
+.nav ul li:hover {
+	background:#204883;
+}
+.nav ul li:first-child {
+	margin-top:0px;
+}
+.nav ul li a {
+	display:block;
+	width:100%;
+	height:100%;
+	padding:0.6em 0;
+	text-align:center;
+	font-family: 'Dekko', cursive;
+	font-weight:300;
+	font-size:1.3em;
+	color:#FFF;
+	border-bottom:solid 1px #204883;
+}
+.nav ul li:hover a {
+	color:#FFF;
+}
+.nav-mobile { /*Mobile menu specific*/
+	display:none;
+	cursor:pointer;
+	position:absolute;
+	top:5px;
+	right:10px;
+	height:50px;
+	width:50px;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	background-color: rgba(255,255,255,0.6);
+	background-image: url(/static/images/gfx/nav.svg);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.banner-container {
+	position:relative;
+	display:block;
+	clear:both;
+	width:100%;
+	height:auto;
+	overflow:hidden;
+	text-align:center;
+	background:#204883;
+}
+.banner {
+	width:100%;
+	min-width:625px;
+	height:auto;
+}
+.overlay-block-main {
+	display:block;
+	clear:both;
+	width:90%;
+	height:auto;
+	padding:1.0em 5%;
+	background:#002851;
+}
+	.overlay-title {
+		font-family: 'Biryani', sans-serif;
+		font-size:1.2em;
+		text-shadow: 0 0 8px #000000;
+	}
+.button { /*For banner overlay*/
+	position:absolute;
+	top:210px;
+	left:15%;
+	display:block;
+	width:70%;
+	margin:1.0em auto;
+	background:rgba(255,142,39,0.9);
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	border:solid 2px #960;
+	-webkit-transition: all 500ms ease-in-out;
+	-moz-transition: all 500ms ease-in-out;
+	-ms-transition: all 500ms ease-in-out;
+	-o-transition: all 500ms ease-in-out;
+	transition: all 500ms ease-in-out;
+	z-index:20;
+}
+.button:hover {
+	background:rgba(255,238,0,0.9);
+	-moz-transform: scale(0.9);
+	-webkit-transform: scale(0.9);
+	-o-transform: scale(0.9);
+	-ms-transform: scale(0.9);
+	transform: scale(0.9);
+}
+.button a {
+	display:block;
+	width:100%;
+	height:100%;
+	padding:0.5em 0%;
+	color:#FFFFFF;
+}
+.button:hover a {
+	color:#000000;
+}
+#container {
+	width:100%;
+	height:auto;
+	font-size:1.2em;
+}
+.full-width {
+	display:block;
+	clear:both;
+	width:100%;
+	height:auto;
+	overflow:hidden;
+	background:#002851;
+}
+.full-width a {
+	color:#FFEE00;
+}
+.full-width a:hover {
+	color:#FFF;
+}
+main, aside, footer {
+	width:92%;
+	padding:0 4%;
+}
+article header {
+}
+aside {
+	height:auto;
+	overflow:hidden;
+	background:#204883;
+}
+aside a {
+	color:#ffee00;
+}
+aside a:hover {
+	color:#FFF;
+}
+aside img {
+	-webkit-transition: 500ms ease-in-out;
+	-moz-transition: 500ms ease-in-out;
+	-ms-transition: 500ms ease-in-out;
+	-o-transition: 500ms ease-in-out;
+	transition: 500ms ease-in-out;
+}
+aside img:hover {
+	-moz-transform: scale(0.9);
+	-webkit-transform: scale(0.9);
+	-o-transform: scale(0.9);
+	-ms-transform: scale(0.9);
+	transform: scale(0.9);
+}
+.social {
+	display:block;
+	float:left;
+	width:100%;
+}
+.social-icons {
+	width:100%;
+	height:auto;
+	overflow:;
+	padding:0.3em 0;
+	background:#FFF;
+	text-align:center;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.social-icons img {
+	padding:0 1.5em;
+}
+.search-block, .featured-side, .late-deals {
+	display:block;
+	clear:both;
+	width:100%;
+	height:auto;
+	overflow:hidden;
+	margin-top:1.0em;
+	margin-bottom:1.0em;
+	color:#204883;
+	text-align:center;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+	.blue-theme {
+		background:rgba(32,72,131,0.2);
+		-webkit-transition: background 500ms ease-in-out;
+		-moz-transition: background 500ms ease-in-out;
+		-ms-transition: background 500ms ease-in-out;
+		-o-transition: background 500ms ease-in-out;
+		transition: background 500ms ease-in-out;
+	}
+	.blue-theme a {
+		color:#204883 !important;
+	}
+	.blue-theme:hover {
+		color:#FFFFFF;
+		background:rgba(32,72,131,0.9);
+	}
+	.blue-theme a:hover {
+		color:#FFFFFF !important;
+	}
+	.blue-theme:hover > .title-side {
+		color:#FFFFFF;
+	}
+.search-block a, .featured-side a, .late-deals a {
+	color:#FFF;
+}
+.featured-side {
+}
+.late-deals {
+}
+.newsletter {
+	display:block;
+	width:90%;
+	height:auto;
+	overflow:hidden;
+	padding-top:1.0em;
+	margin-left:auto;
+	margin-right:auto;
+	color:#FFFFFF;
+	text-align:center;
+}
+footer {
+	height:auto;
+	overflow:hidden;
+	background:#002851;
+}
+.address {
+	display:block;
+	width:96%;
+	height:auto;
+	overflow:hidden;
+	padding:1.0em 2%;
+	margin-left:auto;
+	margin-right:auto;
+	color:#FFFFFF;
+	text-align:center;
+}
+.address span {
+	margin:0 0.3em;
+}
+.credit {
+	display:block;
+	clear:both;
+	padding:1.0em 0;
+	text-align:center;
+	font-size:0.9em;
+	line-height:1.8em;
+	color:#CCCCCC;
+	border-top:solid 1px #204883;
+}
+.credit a {
+	color:#FFFFFF;
+	text-decoration:none;
+}
+/*---------- COTTAGE INDEX PAGE -----*/
+#property-search-results { /*old website ID*/
+	display:block;
+	clear:both;
+	height:auto;
+	overflow:hidden;
+	list-style:outside;
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+/*---------- COTTAGE LISTING PAGE -----*/
+.cottage-points-page, .availability, .desc, .gallery-container, #map {
+	display:block;
+	clear:both;
+	width:100%;
+}
+.cottage-title {
+}
+.gallery-container {
+}
+.gallery-container img {
+	display:block;
+	float:left;
+	width:98%;
+	padding:0;
+	margin:1%;
+}
+.cottage-points-page {
+	list-style:outside;
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+.cottage-points-page li {
+	display:block;
+	float:left;
+	width:48%;
+	padding:0.4em 0;
+	margin:0.2em 1%;
+	text-align:center;
+	background:rgba(32,72,131,0.3);
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	-webkit-transition: background 500ms ease-in-out;
+	-moz-transition: background 500ms ease-in-out;
+	-ms-transition: background 500ms ease-in-out;
+	-o-transition: background 500ms ease-in-out;
+	transition: background 500ms ease-in-out;
+}
+.cottage-points-page li:hover {
+	background:rgba(32,72,131,1.0);
+	color:#FFF;
+}
+.availability {
+}
+.calendar {
+	display:block;
+	width:80%;
+	margin:auto;
+	min-height:250px;
+	background:#FFC;
+	border:solid 1px #eee;
+}
+.calendar tbody td {
+    text-align: center;
+    padding: 5px 8px;
+    background-color: #D8E7FE;
+}
+.calendar table {
+    width:100%;
+    border-spacing: 2px;
+    border-collapse: separate;
+}
+#length-of-stay-select {
+}
+#length-of-stay {
+    width: 50%;
+}
+
+#availability-calendar td.arrival-day {
+    background-color: #22A92A;
+    color: #FFFFFF;
+}
+#availability-calendar td.booked {
+    background-color: #a26B6D;
+}
+#calendar-key {
+    padding-top:  10px;
+    padding-bottom:  10px;
+    padding-left: 20px;
+    margin-left: 2px;
+    margin-right: 21px;
+    margin-bottom: 2px;
+    height: 20px;
+}
+#arrival-day-key {
+    float: left;
+    background-color: #22A92A;
+    height: 20px;
+    width: 20px;
+}
+#booked-key {
+    background-color: #a26B6D;
+    height: 20px;
+    width: 20px;
+    float: left;
+}
+#arrival-day-desc {
+    margin-left: 10px;
+    text-align: left;
+    float: left;
+    margin-right: 10px;
+}
+#booked-desc {
+    margin-left: 10px;
+    text-align: left;
+    float: left;
+}
+
+.available-dates {
+	list-style:outside;
+	list-style-type:none;
+	padding:0;
+	margin:0;
+}
+.available-dates li {
+	display:block;
+	width:90%;
+	padding:2% 5%;
+	margin:0.5em 0;
+	background:rgba(32,72,131,0.1);
+}
+.available-dates li:hover {
+	background:rgba(32,72,131,0.4);
+}
+.available-dates li span {
+	display:block;
+	width:100%;
+	clear:both;
+	text-align:center;
+}
+.desc {
+}
+.cottage-features {
+	display:block;
+	clear:both;
+	width:100%;
+	height:auto;
+	overflow:hidden;
+	list-style:outside;
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+.cottage-features li {
+	display:block;
+	float:left;
+	width:auto;
+	padding:0.3em 10px;
+	margin:0.2em;
+	background:#EEE;
+	-webkit-transition: background 500ms ease-in-out;
+	-moz-transition: background 500ms ease-in-out;
+	-ms-transition: background 500ms ease-in-out;
+	-o-transition: background 500ms ease-in-out;
+	transition: background 500ms ease-in-out;
+}
+.cottage-features li:hover {
+	background:rgba(32,72,131,1.0);
+	color:#FFFFFF;
+}
+#map { /*Google Maps Container*/
+	width:90%;
+	padding:0 5%;
+	min-height:300px;
+	background:#CFC;
+}
+/*---------- TEXT STYLES ----------*/
+.white {
+	color:#FFFFFF;
+}
+.blue {
+	color:#204883;
+	color:rgb(32,72,131);
+}
+.title-script {
+	font-family: 'Architects Daughter', cursive;
+	font-size:2.0em;
+}
+.sub-title {
+}
+.title-side {
+	font-family: 'Architects Daughter', cursive;
+	font-size:1.5em;
+	margin:0.5em 0;
+}
+.small-note {
+	font-size:0.8em;
+}
+.small-note a:hover {
+	color:#FFFFFF;
+}
+.cottage-name-side {
+	font-size:1.3em;
+}
+.cottage-name-side a:hover {
+	color:#FFFFFF;
+}
+.telephone {
+	font-size:1.5em;
+}
+/*---------- IMAGE STYLES --------*/
+.responsive {
+	width:100%;
+	height:auto;
+}
+.img-left {
+	float:left;
+	padding-right:2%;
+}
+.img-right {
+	float:right;
+	padding-left:2%;
+}
+.thumb-aside {
+	display:block;
+	clear:both;
+	max-width:310px;
+	margin:0 auto;
+}
+.cottage-banner {
+	min-width:600px;
+}
+/*---------- SPECIFIC STYLES -----*/
+.block {
+	display:block;
+}
+.button-side { /*For blocks - late deals, featured*/
+	display:block;
+	width:80%;
+	margin:1.0em auto;
+	background:rgba(255,142,39,0.9);
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	border:solid 2px #960;
+	-webkit-transition: all 500ms ease-in-out;
+	-moz-transition: all 500ms ease-in-out;
+	-ms-transition: all 500ms ease-in-out;
+	-o-transition: all 500ms ease-in-out;
+	transition: all 500ms ease-in-out;
+}
+.button-side:hover {
+	background:rgba(255,238,0,0.9);
+	/*
+	-moz-transform: scale(0.9);
+	-webkit-transform: scale(0.9);
+	-o-transform: scale(0.9);
+	-ms-transform: scale(0.9);
+	transform: scale(0.9);
+	*/
+}
+.button-side a {
+	display:block;
+	width:100%;
+	height:100%;
+	padding:0.4em 0;
+	color:#204883;
+}
+.cottage-points {
+	display:block;
+	clear:both;
+	list-style:outside;
+	list-style-type:none;
+	margin:0;
+	margin-top:0.4em;
+	padding:0;
+	width:100%;
+	height:auto;
+}
+.cottage-points li {
+	display:block;
+	float:left;
+	width:49%;
+	padding:0.4em 0;
+	margin-bottom:0.4em;
+	color:#FFFFFF;
+	background:rgba(32,72,131,0.5);
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.cottage-points li:first-child, .cottage-points li:nth-child(3) {
+	margin-right:1%;
+}
+.cottage-points li:last-child, .cottage-points li:nth-child(2) {
+	margin-left:1%;
+}
+.hide-mobile {
+		display:none;
+	}
+/*---------- FORMS ---------------*/
+fieldset {
+	width:94%;
+	padding:1% 3%;
+	border:solid 2px #EEE;
+}
+legend {
+	width:68%;
+	padding:0 4%;
+	margin:0 2%;
+	font-size:1.5em;
+	color:#204883;
+}
+label {
+	display:block;
+	float:left;
+	width:100%;
+}
+input, select {
+	width:94%;
+	padding:0.4em 2%;
+	margin:0.4em 0;
+	color:#666666;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+input[type="submit"] {
+	display:block;
+	width:100%;
+	background: #f2f5f6; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f2f5f6 0%, #e3eaed 37%, #c8d7dc 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 ); /* IE6-9 */
+	-webkit-transition: background 500ms ease-in-out;
+	-moz-transition: background 500ms ease-in-out;
+	-ms-transition: background 500ms ease-in-out;
+	-o-transition: background 500ms ease-in-out;
+	transition: background 500ms ease-in-out;
+}
+input[type="submit"]:hover {
+	color:#FFFFFF;
+	background:#69C;
+}
+input[type="checkbox"] {
+  width: 3%;
+}
+
+textarea {
+	width:94%;
+	min-height:100px;
+	padding:0.4em 2%;
+	margin:0.4em 0;
+	color:#666666;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+#contact-form div, #booking-form div/*, #newsletter-form div*/{
+	display:block;
+	width:100%;
+	clear:both;
+}
+#party_details_table {
+	width: 100%;
+}
+#contact-form {
+}
+#contact-form input {
+}
+#contact-form select {
+	width: 20%;
+}
+#party_details_table select {
+	width: 80%;
+}
+#party_details_table input {
+	width: 90%;
+}
+.errorlist {
+	color: red;
+}
+#booking-form {
+}
+#newsletter-form {
+}
+#newsletter-form input {
+	width:96%;
+}
+#newsletter-form input[type="submit"] {
+	width:50%;
+	margin-left:auto;
+	margin-right:auto;
+}
+/*Index Search Form*/
+#search {
+	display:none;
+}
+#search {
+	bottom:30px;
+	clear:both;
+	width:90%;
+	height:auto;
+	padding:2% 5%;
+	margin:auto;
+	z-index: 10;
+}
+#search legend {
+	position:absolute;
+	top:-20px;
+	left:0;
+	right:0;
+	display:none;
+	width:20%;
+	margin:auto;
+	font-size:1.2em;
+	color:#FFFFFF;
+	background:rgba(32,72,131,0.9);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border:solid 2px #002851;
+}
+#search select {
+	display:block;
+	float:left;
+	width:100%;
+	margin-right:;
+	text-align:center;
+}
+#search input[type="submit"] {
+	width:100%;
+	max-width:;
+	text-align:center;
+}
+#search label {
+	display:block;
+	float:left;
+	width:100%;
+	margin-right:;
+	font-weight:400;
+	color:#FFFFFF;
+}
+/*---------- OTHER CUSTOM STYLES --------*/
+
+/*---------- START MEDIA QUERIES -------*/
+@media (min-width: 644px) {
+	.button {
+		width:40%;
+		left:30%;
+	}
+	.title-script {
+		font-size:3.4em;
+	}
+	.sub-title {
+		font-size:1.2em;
+	}
+	.search-block, .featured-side, .late-deals {
+		display:block;
+		float:left;
+		clear:none;
+		width:49%;
+	}
+	.search-block {
+		width:100%;
+	}
+	.featured-side {
+		margin-right:1%;
+	}
+	.late-deals {
+		margin-left:1%;
+	}
+	#contact-form input[type="submit"], #booking-form input[type="submit"] {
+		float:none;
+		margin:0.4em auto;
+		max-width:250px;
+	}
+	.hide-mobile {
+		display:block;
+	}
+	.gallery-container, .cottage-points-page {
+		float:left;
+		clear:none;
+		width:50%;
+	}
+	.cottage-points-page li {
+		width:90%;
+		margin:0.2em 5%;
+	}
+}
+@media (min-width: 1px) and (max-width: 767px) {
+	h1, h2, h3, h4, h5, h6 {
+		text-align:center;
+	}
+	/*mobile specific*/
+	nav {
+		min-height:60px;
+	}
+	.nav ul {
+		
+	}
+	.nav-list {
+		display:none;
+	}
+	.nav-mobile {
+		display:block;
+	}
+	.nav-active {
+		display:block;
+	}
+	.nav-mobile-open {
+		border-radius:5px 5px 0 0;
+		-webkit-border-radius:5px 5px 0 0;
+		-moz-border-radius:5px 5px 0 0;
+	} /*end mobile specific*/
+}
+@media (min-width: 768px) {
+	h1 {
+		font-size:2.4em;
+	}
+	h2 {
+		font-size:2.2em;
+	}
+	h3 {
+		font-size:2.0em;
+	}
+	h4, h5, h6 {
+		font-size:1.8em;
+	}
+	.masthead {
+		padding-top:0px;
+	}
+	.logo {
+		top:0;
+		width:96%;
+		padding-left:4%;
+		text-align:left;
+	}
+	.head-tel {
+		display:none;
+	}
+	.banner-tel {
+		display:block;		
+	}
+	/*Navigation at 768px - hide 'about us' & 'owners info' links*/
+	.nav {
+		display:block;
+		width:100%;
+		height:;
+	}
+	.nav ul {
+		margin-top:;
+	}
+	.nav ul li:nth-child(4), .nav ul li:nth-child(6) {
+		display:none;
+	}
+	.nav ul li {
+		width:25%;
+	}
+	.nav ul li:first-child {
+		margin-top:0 !important;
+	}
+	.nav ul li a {
+		font-size:1.4em;
+		border-bottom:none;
+		border-right:solid 1px #204883;
+	}
+	.nav ul li:last-child a {
+		border-right:none;
+	}
+	main, aside, footer {
+		width:90%;
+		padding:0 5%;
+	}
+	aside {
+		width:96%;
+		padding:0 2%;
+	}
+	.address {
+		text-align:left;
+	}
+	main {
+		position:relative;
+	}
+	.cottage-title {
+		display:block;
+		width:58%;
+		padding:0 1%;
+		float:right;
+		font-size:2.0em;
+		text-align:left;
+	}
+	.gallery-container {
+		position:absolute;
+		top:-115px;
+		width:32%;
+		padding:0 2%;
+		background:rgba(255,255,255,0.5);
+		-webkit-transition: background 500ms ease-in-out;
+		-moz-transition: background 500ms ease-in-out;
+		-ms-transition: background 500ms ease-in-out;
+		-o-transition: background 500ms ease-in-out;
+		transition: background 500ms ease-in-out;
+	}
+	.gallery-container:hover {
+		background:rgba(32,72,131,0.3);
+	}
+	.gallery-container img {
+		float:none;
+		margin:auto;
+		margin-top:10px;
+		max-width:290px;
+		border:solid 1px #666;
+	}
+	.cottage-points-page {
+		width:60%;
+		margin-left:40%;
+	}
+	.cottage-points-page li {
+		width:48%;
+		margin:0.2em 1%;
+	}
+	.availability {
+		float:left;
+		clear:left;
+		width:40%;
+	}
+	.calendar {
+		width:100%;
+	}
+	.desc {
+		float:left;
+		clear:none;
+		width:56%;
+		padding:0 2%;
+	}
+	.button {
+		top:45px;
+		left:auto;
+		right:10%;
+	}
+	.credit {
+		text-align:right;
+	}
+	label {
+		width:30%;
+	}
+	input {
+		width:64%;
+		padding:0.4em 2%;
+		margin:0.4em 0;
+	}
+	#contact-form input[type="submit"], #booking-form input[type="submit"] {
+		float:right;
+		max-width:250px;
+		margin-left:1.0em;
+	}
+	#search {
+		position:absolute;
+		top:170px;
+		bottom:auto;
+		left:15%;
+		width:60%;
+		background:rgba(32,72,131,0.5);
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+		border-radius: 15px;
+		border:solid 1px #002851;
+	}
+	#search legend {
+		display:block;
+	}
+	#search select {
+		width:25%;
+	}
+	#search input[type="submit"] {
+		width:40%;
+		margin:auto;
+	}
+	#search label {
+		width:25%;
+		margin-top:0.5em;
+	}
+}
+@media (min-width: 900px) {
+	.overlay-title {
+		font-size:1.6em;
+	}
+	/*restore 'about us' and 'owners info' links*/
+	.nav ul li:nth-child(4), .nav ul li:nth-child(6) {
+		display:block;
+	}
+	.nav ul li:first-child {
+		width:10%;
+	}
+	.nav ul li {
+		width:18%;
+	}
+	.nav ul li a {
+		padding:0.8em 0;
+	}
+	.title-script {
+		font-size:4.0em;
+	}
+	.sub-title {
+		font-size:1.2em;
+	}
+}
+@media (min-width: 1024px) {
+	.logo {
+	}
+	.banner-tel {
+		top:40px;
+		right:4%;
+		width:44%;
+		font-size:1.8em;
+		text-align:right;
+	}
+	.nav ul li a {
+		font-size:;
+	}
+	.overlay-block-main {
+		position:absolute;
+		top:30%;
+		width:96%;
+		padding:1.0em 2%;
+		text-align:center;
+		background:transparent;
+	}
+		.overlay-title {
+			font-size:2.0em;
+		}
+	.button {
+		display:none;
+	}
+	.search-block, .featured-side, .late-deals {
+		display:block;
+		float:left;
+		width:31%;
+		margin-left:1%;
+		margin-right:1%;
+	}
+	.cottage-title {
+		font-size:2.4em;
+	}
+	.gallery-container {
+	}
+	.cottage-points-page {
+	}
+	.cottage-points-page li {
+	}
+	.newsletter {
+		float:left;
+		width:66%;
+		padding:1.0em 2%;
+		text-align:left;
+	}
+	.social {
+		width:29%;
+	}
+	footer {
+		width:96%;
+		padding:0 2%;
+	}
+	.title-script {
+		font-size:3.5em;
+	}
+	.sub-title {
+		font-size:1.4em;
+	}
+	#newsletter-form input[type="email"] {
+		width:86%;
+	}
+	#newsletter-form input[type="submit"] {
+		margin:0.5em 0;
+	}
+	#search {
+		display:block;
+		top:auto;
+		bottom:30px;
+		left:0;
+		right:0;
+		width:90%;
+		padding:2% 2%;
+	}
+	#search label {
+		width:11%;
+		padding:0.25em 0;
+	}
+	#search select {
+		width:13%;
+		padding:0.4em 1%;
+	}
+	#search input[type="submit"] {
+		width:20%;
+		margin:0 auto;
+	}
+}
+@media (min-width: 1200px ) {
+	h1 {
+		font-size:2.9em;
+	}
+	.button {
+		top:14%;
+		bottom:auto;
+		right:15%;
+	}
+	.title-script {
+		font-size:3.9em;
+	}
+	.title-side {
+		font-size:1.8em;
+	}
+	.sub-title {
+		font-size:1.7em;
+	}
+	#newsletter-form input[type="email"] {
+		width:76%;
+	}
+}
+@media (min-width: 1440px) {
+	.button {
+		top:14%;
+		bottom:auto;
+		right:20%;
+	}
+}
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers:
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

@@ -1,0 +1,60 @@
+<!doctype html>
+{% load static %}
+<html class="no-js" lang="en">
+<head>
+    {% include "analytics.html" %}
+    {% include "fbpixel.html" %}    
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{entry.title}} - Puffin Cottage Holidays Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" href="{% static "images/apple-touch-icon.png" %}">
+  <link rel="stylesheet" href="{% static "css/normalize.css" %}">
+  <link rel="stylesheet" href="{% static "css/main.css" %}">
+  <script defer async src="{% static "js/vendor/modernizr-2.8.3.min.js" %}"></script>
+</head>
+<body>
+<!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+    <div id="wrapper">
+        <header class="masthead">
+            <div class="head-tel"><a href="tel:01834810234" title="Call 01834 810234">01834 810234</a></div>
+            <nav class="nav" role="navigation">
+                <ul class="nav-list">
+                    <li><a href="/" target="_self" title="Home">Home</a></li>
+                    <li><a href="/cottages/" target="_self" title="Cottages">Cottages</a></li>
+                    <li><a href="/about-us/" target="_self" title="About Us">About us</a></li>
+                    <li><a href="/contact-us/" target="_self" title="Contact">Contact</a></li>
+                    <li><a href="/property-owners/" target="_self" title="Cottage Owners Info">Owners Info</a></li>
+                </ul>
+            </nav>
+            <script type="text/javascript" src="{% static "js/mobile-nav.js" %}"></script>
+        </header>
+        <!--Container-->
+        <div id="container">
+            <div class="banner-container">
+                <div class="logo">
+                    <a href="/" target="_self" title="Puffin Cottages Home">
+                        <img src="{% static "images/gfx/puffin-cottages-logo-350.png" %}" alt="Puffin Cottage Holidays logo">
+                    </a>
+                </div>
+                <div class="banner-tel"><a href="tel:01834810234" title="Call 01834 810234">Call us 01834 810234</a></div>
+                <img src="{% static "images/banners/banner-1440-350-saundersfoot-aerial.jpg" %}" class="responsive banner">
+            </div>
+            <main role="main">
+            <!--Main Content Area-->
+            {% block main %}{% endblock %}
+            </main>
+            <!--End Main Content Area-->
+            <!--Aside Content Area-->
+            {% include "aside.html" %}
+            <!--End Aside Content Area-->
+        </div>
+        <!--End Container -->
+        {% include "footer.html" %}
+    </div>
+    <script defer async src="{% static "js/plugins.js" %}"></script>
+    <script defer async src="{% static "js/main.js" %}"></script>
+</body>
+</html>

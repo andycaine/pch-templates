@@ -1,0 +1,22 @@
+{% load markdown %}
+
+<article>
+    <header>
+        <h1>{{entry.title}}</h1>
+    </header>
+        <div class="entry_body">
+            {% safe_markdown entry.body %}
+        </div>
+        <div class="entry_tags">
+        {% for tag in entry.tags.all %}
+            {% if forloop.first %}
+            Tags:
+            {% endif %}
+            <a href="/blog/tags/{{tag.name}}/">{{tag.label}}</a>
+            {% if not forloop.last %}
+            |
+            {% endif %}
+        {% endfor %}
+        </div>
+        <p class="entry_posted">Date: {{entry.date_created|date:"d F Y"}}</p>
+  </article>
